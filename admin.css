@@ -1,0 +1,335 @@
+/**
+ * admin.css
+ * Gov portal style admin dashboard – clean, professional, minimal.
+ */
+
+.top-nav-admin {
+  background: #0f172a;
+}
+
+.site-banner-admin {
+  background: linear-gradient(135deg, #1e293b, #334155);
+  padding: 14px 24px;
+  font-size: 0.9rem;
+}
+
+.admin-back-link {
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: background 0.2s;
+}
+
+.admin-back-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.admin-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+}
+
+.admin-container h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 16px;
+  margin-top: 32px;
+}
+
+.admin-container h2:first-child {
+  margin-top: 0;
+}
+
+/* Stats grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.stat-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.stat-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: #cbd5e1;
+}
+
+.stat-card .stat-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1a2980;
+  display: block;
+}
+
+.stat-card .stat-label {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-top: 6px;
+}
+
+/* Admin tabs */
+.admin-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 0;
+}
+
+.admin-tab {
+  padding: 10px 22px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  color: #475569;
+  cursor: pointer;
+  border-radius: 8px 8px 0 0;
+  transition: background 0.2s, color 0.2s;
+}
+
+.admin-tab:hover {
+  background: #f1f5f9;
+  color: #1a2980;
+}
+
+.admin-tab.active {
+  background: #fff;
+  color: #1a2980;
+  border-bottom-color: #fff;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* Admin table */
+.admin-table-wrap {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0 8px 8px 8px;
+  overflow-x: auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  margin-bottom: 36px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.admin-table th {
+  text-align: left;
+  padding: 14px 18px;
+  background: #f8fafc;
+  font-weight: 600;
+  color: #1e293b;
+  border-bottom: 2px solid #e2e8f0;
+  font-size: 0.85rem;
+}
+
+.admin-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+.admin-table tbody tr {
+  transition: background 0.15s;
+}
+
+.admin-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.admin-table tbody tr.row-active {
+  background: #f0fdf4;
+}
+
+.admin-table tbody tr.row-active:hover {
+  background: #ecfdf5;
+}
+
+.admin-table tbody tr.row-expired {
+  color: #94a3b8;
+}
+
+.admin-table .actions-cell {
+  white-space: nowrap;
+}
+
+.admin-table .actions-cell button {
+  padding: 6px 12px;
+  margin-right: 6px;
+  margin-bottom: 4px;
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.admin-table .btn-approve {
+  background: #16a34a;
+  color: #fff;
+}
+
+.admin-table .btn-approve:hover {
+  background: #15803d;
+}
+
+.admin-table .btn-edit {
+  background: #64748b;
+  color: #fff;
+}
+
+.admin-table .btn-edit:hover {
+  background: #475569;
+}
+
+.admin-table .btn-expire {
+  background: #dc2626;
+  color: #fff;
+}
+
+.admin-table .btn-expire:hover {
+  background: #b91c1c;
+}
+
+.admin-table .btn-approve:disabled,
+.admin-table .btn-expire:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Pending list */
+.pending-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pending-item {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 18px 22px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s;
+}
+
+.pending-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.pending-item-info {
+  flex: 1;
+  min-width: 200px;
+}
+
+.pending-item-name {
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 4px;
+  font-size: 0.95rem;
+}
+
+.pending-item-type {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.pending-item-source a {
+  color: #1a2980;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.pending-item-source a:hover {
+  text-decoration: underline;
+}
+
+.pending-item .approve-btn {
+  padding: 8px 18px;
+  background: #16a34a;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.pending-item .approve-btn:hover {
+  background: #15803d;
+}
+
+.pending-item .approve-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Recently approved */
+.recently-approved-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.recently-approved-item {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.recently-approved-item .item-name {
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 0.95rem;
+}
+
+.recently-approved-item .item-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.no-pending {
+  color: #64748b;
+  padding: 28px 24px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.admin-section-desc {
+  margin-bottom: 20px;
+  color: #64748b;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}

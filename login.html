@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login – TN OPPORTUNE</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="auth.css" />
+</head>
+<body>
+  <nav class="top-nav">
+    <a href="index.html" class="nav-brand">TN OPPORTUNE</a>
+    <div class="nav-user">
+      <a href="register.html">Register</a>
+    </div>
+  </nav>
+  <header class="site-banner">
+    <p>Tamil Nadu Government Schemes & Jobs Portal</p>
+  </header>
+
+  <main class="auth-main">
+    <div class="auth-card">
+      <h2>Government Login</h2>
+      <p class="auth-subtitle">Secure access to Tamil Nadu Government Schemes & Jobs portal.</p>
+      <form id="loginForm">
+        <label for="loginEmail">Email</label>
+        <input type="email" id="loginEmail" placeholder="you@example.com" required />
+
+        <label for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" placeholder="Enter your password" required />
+
+        <fieldset class="auth-role-group">
+          <legend>Login as</legend>
+          <div class="role-toggle">
+            <label class="role-toggle-option">
+              <input type="radio" name="role" value="user" checked />
+              <span>User</span>
+            </label>
+            <label class="role-toggle-option">
+              <input type="radio" name="role" value="admin" />
+              <span>Admin</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="auth-submit-btn">Login</button>
+      </form>
+      <div class="auth-footer-link">
+        Don't have an account? <a href="register.html">Register</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="auth.js"></script>
+</body>
+</html>
+
