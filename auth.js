@@ -7,6 +7,8 @@
 const BASE_URL = window.location.hostname === "localhost"
   ? "http://localhost:3001"
   : "https://tn-opportune-2.onrender.com";
+
+const AUTH_API_BASE = `${BASE_URL}/api/auth`;
 // ===== Theme management (shared with dashboard) =====
 function getPreferredTheme() {
   const stored = localStorage.getItem("tn_theme");
@@ -152,4 +154,3 @@ document.addEventListener("DOMContentLoaded", () => {
     registerForm.addEventListener("submit", handleRegister);
   }
 });
-
