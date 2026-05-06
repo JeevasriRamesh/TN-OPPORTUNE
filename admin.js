@@ -3,8 +3,9 @@
  * Admin dashboard: fetches pending auto-fetched items and handles approve actions.
  */
 
-const API_BASE = "http://localhost:3001/api/admin";
-
+const BASE_URL = window.location.hostname === "localhost"
+  ? "http://localhost:3001"
+  : "https://tn-opportune-2.onrender.com";
 let adminItemsType = "scheme";
 
 async function loadStats() {

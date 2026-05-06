@@ -1,6 +1,9 @@
 // ===== Simple auth guard for dashboard =====
 // If there is no authToken at all, force navigation to login.html.
 // This ensures index.html (dashboard) never loads for unauthenticated users.
+const BASE_URL = window.location.hostname === "localhost"
+  ? "http://localhost:3001"
+  : "https://tn-opportune-2.onrender.com";
 if (!localStorage.getItem("authToken")) {
   window.location.href = "login.html";
 }
@@ -120,13 +123,11 @@ let lastFetchedJobData = [];
 
 // Base URL for the backend schemes API
 // (Previously data came from schemes.js; now it is loaded from the server)
-const API_BASE_URL = "http://localhost:3001/api/schemes";
-// Base URL for user-related APIs (e.g., applied schemes for a user)
-const USER_API_BASE_URL = "http://localhost:3001/api/users";
-// Spec-driven endpoints for apply + profile
-const APPLY_SCHEME_API_URL = "http://localhost:3001/api/apply-scheme";
-const USER_PROFILE_API_URL = "http://localhost:3001/api/user-profile";
-const MATCH_API_URL = "http://localhost:3001/api/schemes/match-scores";
+const API_BASE_URL = `${BASE_URL}/api/schemes`;
+const USER_API_BASE_URL = `${BASE_URL}/api/users`;
+const APPLY_SCHEME_API_URL = `${BASE_URL}/api/apply-scheme`;
+const USER_PROFILE_API_URL = `${BASE_URL}/api/user-profile`;
+const MATCH_API_URL = `${BASE_URL}/api/schemes/match-scores`;
 
 let lastMatchScores = {};
 

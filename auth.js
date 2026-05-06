@@ -4,8 +4,9 @@
  * Uses the existing backend API at POST /api/auth/login and /api/auth/register.
  */
 
-const AUTH_API_BASE = "http://localhost:3001/api/auth";
-
+const BASE_URL = window.location.hostname === "localhost"
+  ? "http://localhost:3001"
+  : "https://tn-opportune-2.onrender.com";
 // ===== Theme management (shared with dashboard) =====
 function getPreferredTheme() {
   const stored = localStorage.getItem("tn_theme");
@@ -137,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // screens and go straight to the dashboard.
   const existingToken = localStorage.getItem("authToken");
   if (existingToken) {
-    window.location.href = "/dashboard";
+    window.location.href = "index.html";
     return;
   }
 
