@@ -1,8 +1,3 @@
-/**
- * server.js
- * Entry point for TN OPPORTUNE backend
- */
-
 require("dotenv").config();
 
 const express = require("express");
@@ -27,31 +22,26 @@ const { startDeadlineReminderCron } = require("./cron/deadlineReminderCron");
 
 const app = express();
 
-// ✅ IMPORTANT: Render uses dynamic PORT
 const PORT = process.env.PORT || 3001;
 
-// ---------------- MIDDLEWARE ----------------
+// Middleware
 app.use(cors());
 app.use(express.json());
 
-// ---------------- DATABASE ----------------
+// DB CONNECT
 connectDB();
 
-// ---------------- STATIC FRONTEND ----------------
-// (serves your HTML/CSS/JS)
+// Static frontend
 app.use(express.static(path.join(__dirname, "..")));
 
-// ---------------- CRON JOBS ----------------
-// ⚠️ In production these will run continuously on Render server
+// CRON JOBS
 startExpireSchemesCron();
 startFetchSchemesCron();
 startAutoFetchCron();
 startDeadlineReminderCron();
 
-// ---------------- FRONTEND ROUTES ----------------
-app.get("/", (req, res) => {
-  res.redirect("/login");
-});
+// Pages
+app.get("/", (req, res) => res.redirect("/login"));
 
 app.get("/login", (req, res) => {
   res.sendFile(path.join(__dirname, "..", "login.html"));
@@ -65,14 +55,14 @@ app.get("/admin", (req, res) => {
   res.sendFile(path.join(__dirname, "..", "admin.html"));
 });
 
-// ---------------- API ROUTES ----------------
+// APIs
 app.use("/api/schemes", schemeRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api", applicationRoutes);
 app.use("/api/admin", adminRoutes);
 
-// ---------------- START SERVER ----------------
+// START SERVER
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
 });
