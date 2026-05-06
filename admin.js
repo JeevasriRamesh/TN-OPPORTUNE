@@ -6,6 +6,7 @@
 const BASE_URL = window.location.hostname === "localhost"
   ? "http://localhost:3001"
   : "https://tn-opportune-2.onrender.com";
+const API_BASE = `${BASE_URL}/api/admin`;
 let adminItemsType = "scheme";
 
 async function loadStats() {
