@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard – TN OPPORTUNE</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <nav class="top-nav top-nav-admin">
+    <a href="index.html" class="nav-brand">TN OPPORTUNE</a>
+    <div class="nav-user">
+      <a href="index.html" class="admin-back-link">← Back to portal</a>
+    </div>
+  </nav>
+  <header class="site-banner site-banner-admin">
+    <p>Admin Dashboard – Pending Verification</p>
+  </header>
+
+  <div class="admin-container">
+    <h2>Dashboard Summary</h2>
+    <div class="stats-grid" id="statsGrid">
+      <div class="stat-card"><span class="stat-value" id="statTotal">—</span><div class="stat-label">Total Items</div></div>
+      <div class="stat-card"><span class="stat-value" id="statSchemes">—</span><div class="stat-label">Total Schemes</div></div>
+      <div class="stat-card"><span class="stat-value" id="statJobs">—</span><div class="stat-label">Total Jobs</div></div>
+      <div class="stat-card"><span class="stat-value" id="statApproved">—</span><div class="stat-label">Approved Items</div></div>
+      <div class="stat-card"><span class="stat-value" id="statPending">—</span><div class="stat-label">Pending Items</div></div>
+    </div>
+    <h2>All Schemes & Jobs</h2>
+    <div class="admin-tabs">
+      <button type="button" class="admin-tab active" id="adminTabSchemes" data-type="scheme">Schemes</button>
+      <button type="button" class="admin-tab" id="adminTabJobs" data-type="job">Jobs</button>
+    </div>
+    <div class="admin-table-wrap">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Category</th>
+            <th>Status</th>
+            <th>Verified</th>
+            <th>Approved</th>
+            <th>Last Verified</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="adminTableBody"></tbody>
+      </table>
+      <p id="noTableItems" class="no-pending" style="display: none; padding: 24px;">No items found.</p>
+    </div>
+    <h2>Auto-fetched schemes & jobs awaiting approval</h2>
+    <p class="admin-section-desc">
+      These items were auto-detected from official .gov.in sources. Approve to make them visible to users.
+    </p>
+    <ul id="pendingList" class="pending-list"></ul>
+    <p id="noPending" class="no-pending" style="display: none;">No pending items.</p>
+    <h2 style="margin-top: 32px;">Recently Approved Items</h2>
+    <ul id="recentlyApprovedList" class="recently-approved-list"></ul>
+    <p id="noRecentlyApproved" class="no-pending" style="display: none;">No approved items yet.</p>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+/**
+ * auth.css
+ * Government-style clean design for Login and Register pages.
+ */
+
+.auth-body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, rgba(16, 185, 129, 0.45), transparent 55%),
+              radial-gradient(circle at bottom right, rgba(15, 23, 42, 0.8), #020617);
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px 40px;
+}
+
+.auth-hero {
+  width: 100%;
+  max-width: 1040px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 32px;
+  align-items: center;
+}
+
+.auth-hero-text h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #ecfdf5;
+  margin-bottom: 8px;
+}
+
+.auth-hero-text p {
+  font-size: 0.98rem;
+  color: rgba(241, 245, 249, 0.9);
+  max-width: 360px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 18px;
+  padding: 32px 36px 36px;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  backdrop-filter: blur(22px);
+  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.auth-card.glass:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 80px rgba(15, 23, 42, 0.95);
+  border-color: rgba(52, 211, 153, 0.8);
+}
+
+.auth-card h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ecfdf5;
+  text-align: center;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.auth-subtitle {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #9ca3af;
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+
+.auth-card label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #cbd5f5;
+  margin-bottom: 6px;
+}
+
+.auth-card input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  border-radius: 999px;
+  margin-bottom: 0;
+  background: rgba(15, 23, 42, 0.95);
+  color: #e5e7eb;
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.auth-card input:focus {
+  outline: none;
+  border-color: #34d399;
+  box-shadow: 0 0 0 2px rgba(52, 211, 153, 0.5);
+}
+
+.input-with-icon {
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.input-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.82rem;
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+.input-with-icon input {
+  padding-left: 34px;
+}
+
+.auth-submit-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #022c22;
+  background: #10b981;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  margin-top: 8px;
+  box-shadow: 0 14px 35px rgba(5, 150, 105, 0.45);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.auth-submit-btn:hover {
+  background: #34d399;
+  transform: translateY(-1px);
+  box-shadow: 0 18px 45px rgba(4, 120, 87, 0.65);
+}
+
+.auth-footer-link {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+.auth-footer-link a {
+  color: #6ee7b7;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-footer-link a:hover {
+  text-decoration: underline;
+}
+
+/* Role toggle (User / Admin) */
+.auth-role-group {
+  border: none;
+  margin: 10px 0 4px;
+  padding: 0;
+}
+
+.auth-role-group legend {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #9ca3af;
+  margin-bottom: 6px;
+}
+
+.role-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: rgba(15, 23, 42, 0.8);
+  border-radius: 999px;
+  padding: 3px;
+  margin-bottom: 12px;
+}
+
+.role-toggle-option {
+  flex: 1;
+  position: relative;
+}
+
+.role-toggle-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.role-toggle-option span {
+  display: block;
+  text-align: center;
+  padding: 7px 0;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #cbd5f5;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.role-toggle-option input[type="radio"]:checked + span {
+  background: linear-gradient(135deg, #059669, #10b981);
+  color: #fff;
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.08);
+}
+
+@media (max-width: 768px) {
+  .auth-hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .auth-hero-text {
+    text-align: center;
+  }
+
+  .auth-hero-text p {
+    margin: 0 auto;
+  }
+}
+
